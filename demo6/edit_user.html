@@ -21,18 +21,18 @@
         <h3 ng-show="user">Edit User</h3>
 
         <form action="#" method="POST" class="form-horizontal" name="userForm" novalidate>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">用户名</label>
-                <div class="col-sm-10">
+            <div class="row">
+                <label class="span2">用户名</label>
+                <div class="span10">
                     <input type="text" name="username" ng-model="user.username" class="form-control" required />
                     <span class="alter-warning" ng-show="userForm.username.$dirty && userForm.username.$invalid">
                         <span ng-show="userForm.username.$error.required">用户名必填</span>
                     </span>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">手机号</label>
-                <div class="col-sm-10">
+            <div class="row">
+                <label class="span2">手机号</label>
+                <div class="span10">
                     <input type="text" name="mobile" ng-model="user.mobile" ng-model-options="{updateOn: 'blur'}" class="form-control" ng-required="true"
                         pattern="1[0-9]{10}"
                         ng-pattern="/^1[0-9]{10}$/" />
@@ -43,9 +43,9 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">邮箱</label>
-                <div class="col-sm-10">
+            <div class="row">
+                <label class="span2">邮箱</label>
+                <div class="span10">
                     <input type="email" name="email" ng-model="user.email" class="form-control" ng-required="false"
                         ng-pattern="/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/" />
                     <span class="alter-warning" ng-show="userForm.email.$dirty && userForm.email.$invalid">
@@ -54,43 +54,46 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">出生年月</label>
-                <div class="col-sm-10">
+            <div class="row">
+                <label class="span2">出生年月</label>
+                <div class="span10">
                     <input type="date" name="birthday" ng-model="user.birthday" class="form-control" min="1900-01-01" max="2016-01-01" />
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">性别</label>
-                <div class="col-sm-10">
+            <div class="row">
+                <label class="span2">性别</label>
+                <div class="span10">
                     <input type="checkbox" ng-true-value="'male'" ng-false-value="'female'" name="gender" ng-model="user.gender" />男
                     <input type="checkbox" ng-true-value="'female'" ng-false-value="'male'" name="gender" ng-model="user.gender" />女
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">已登录</label>
-                <div class="col-sm-10">
+            <div class="row">
+                <label class="span2">已登录</label>
+                <div class="span10">
                     <input type="radio" ng-model="user.isLogin" value='Y'/>是
                     <input type="radio" ng-model="user.isLogin" value='N'/>否
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">城市</label>
-                <div class="col-sm-10">
+            <div class="row">
+                <label class="span2">城市</label>
+                <div class="span10">
                     <select ng-model="user.city" ng-options="city.name for city in cities" class="form-control"></select>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">余额</label>
-                <div class="col-sm-10">
+            <div class="row">
+                <label class="span2">余额</label>
+                <div class="span10">
                     <input type="number" ng-disabled="user" ng-model="user.balance" class="form-control"/>
                 </div>
             </div>
-            <input type="button" class="btn btn-success" value="Show" ng-click="show()" />
-            <input type="button" class="btn btn-default" value="Submit" ng-disabled="user"/>
+
+            <div class="row">
+                <input type="button" class="btn btn-success" value="Show" ng-click="show()" />
+                <input type="button" class="btn btn-default" value="Submit" ng-disabled="user"/>
+            </div>
         </form>
     </div>
   </body>
