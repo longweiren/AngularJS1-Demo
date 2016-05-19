@@ -1,0 +1,14 @@
+<div ng-controller="UserController">
+    <div class="form-group">
+        <label>姓名</label>
+        <div>{{ user.name }}</div>
+    </div>
+    <div class="form-group">
+        <label>性别</label>
+        <div>{{ user.gender | dictTrans:'gender' }}</div>
+    </div>
+    <div class="form-group">
+        <label> 城市</label>
+        <div>{{ user.city.name }}</div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>AngularJs 1 Demo1</title>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript" src="../js/angular-ui-router.js"></script>
+
+    <script type="text/javascript" src="product/product_list_controller.js"></script>
+    <script type="text/javascript" src="product/product_controller.js"></script>
+    <script type="text/javascript" src="user/user_controller.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+
+  </head>
+
+  <body ng-app='myApp'>
+    <div class="menu_group">
+      <ul class="nav">
+        <li ng-class="{active : $state.includes('products')}">
+          <a ui-sref="products" href="#/products">Products</a>
+        </li>
+        <li ng-class="{active : $state.includes('users')}">
+          <a ui-sref="users" href="#/users">Users</a>
+        </li>
+      </ul>
+    </div>
+
+    <div ui-view></div>
+  </body>
+</html>

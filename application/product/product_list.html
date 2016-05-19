@@ -1,0 +1,21 @@
+<div class="table-responsive">
+    <table class="table">
+        <caption>产品列表</caption>
+        <thead>
+            <tr>
+                <td>编号</td>
+                <td>名称</td>
+                <td>价格</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in list_datas" ng-class="$even ? 'active' : 'success'">
+                <td>{{ $index + 1 }}</td>
+                <td><a href="#/products/{{ product.id}}">{{ product.name }}</td>
+                <td>{{ product.price | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div ui-view></div>
+</div>

@@ -1,0 +1,14 @@
+<div ng-controller="UserController"  class="form-horizontal">
+    <div class="row">
+        <label class="span2">姓名</label>
+        <div class="span10">{{ user.name }}</div>
+    </div>
+    <div class="row">
+        <label class="span2">性别</label>
+        <div class="span10">{{ user.gender | dictTrans:'gender' }}</div>
+    </div>
+    <div class="row">
+        <label class="span2"> 城市</label>
+        <div class="span10">{{ user.city.name }}</div>
+    </div>
+</div>
